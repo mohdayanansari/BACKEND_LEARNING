@@ -1,0 +1,78 @@
+openapi: 3.0.0
+info:
+    title: Social App
+    description: Our first social app - Ayan Ansari
+    version: 1.0.1
+
+servers:
+    - url: https://www.domain.com/api/v1
+      description: Main production server
+    - url: http://localhost:3000/api/v1
+      description: Internal staging server for testing
+
+components:
+    securitySchemes:
+        BasicAuth:
+            type: http
+            scheme: basic
+        BearerAuth:
+            type: http
+            scheme: bearer
+
+paths:
+    /instagram:
+        get:
+            summary: returns username, followers nad follows
+            responses:
+                '200': # status code
+                    description: returns an object
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    username:
+                                        type: string
+                                    followers:
+                                        type: string
+                                    follows:
+                                        type: string
+                                    date:
+                                        type: string
+        post:
+            summary: returns username, followers nad follows
+            responses:
+                '201': # status code
+                    description: returns an object
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    username:
+                                        type: string
+                                    followers:
+                                        type: string
+                                    follows:
+                                        type: string
+                                    date:
+                                        type: string
+    /{great}:
+        get:
+            summary: returns whatever in the parameter
+            parameters:
+                - name: great
+                  default: hey
+                  in: path
+                  schema:
+                      type: string
+            responses:
+                '200': # status code
+                    description: returns an object
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    params:
+                                        type: string

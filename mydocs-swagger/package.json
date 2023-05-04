@@ -1,5 +1,5 @@
 {
-	"name": "socialapp-1",
+	"name": "mydocs-swagger",
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
@@ -13,7 +13,6 @@
 	"license": "ISC",
 	"dependencies": {
 		"express": "^4.18.2",
-		"moment": "^2.29.4",
 		"swagger-ui-express": "^4.6.2",
 		"yaml": "^2.2.2"
 	},

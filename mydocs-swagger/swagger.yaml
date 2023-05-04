@@ -1,0 +1,29 @@
+openapi: 3.0.0
+info:
+    title: My Swagger Learning
+    description: Optional multiline or single-line description in [CommonMark](http://commonmark.org/help/) or HTML.
+    version: 1.0.1
+    contact:
+        email: mohdayanansari199@gmail.com
+        url: www.abc.com
+
+# servers:
+#     - url: http://api.example.com/v1
+#       description: Optional server description, e.g. Main (production) server
+#     - url: http://staging-api.example.com
+#       description: Optional server description, e.g. Internal staging server for testing
+servers:
+    - url: '{protocol}://api.example.com/{version}'
+      description: Main (production) server
+      variables:
+          version:
+              enum:
+                  - v1
+                  - v2
+          protocol:
+              enum:
+                  - http
+                  - https
+
+    - url: http://staging-api.example.com
+      description: Optional server description, e.g. Internal staging server for testing
